@@ -1,0 +1,10 @@
+SELECT SUM(poanghemma) as 'Total Poäng', namn FROM matcher, lag WHERE hemmalag = (SELECT namn From lag WHERE Id = 1);
+
+SELECT SUM(poanghemma) as 'Total Poäng', namn FROM matcher, lag WHERE hemmalag GROUP BY poanghemma
+'
+SELECT SUM(poanghemma) as 'Total Poäng' FROM matcher WHERE hemmalag = 1 UNION SELECT SUM(poanghemma) as 'Total Poäng' FROM matcher WHERE hemmalag = 1;
+
+
+SELECT SUM(poanghemma) as 'Total Poäng' FROM matcher WHERE hemmalag = 1 
+UNION 
+SELECT SUM(poangborta) as 'Total Poäng' FROM matcher WHERE bortalag = 1
